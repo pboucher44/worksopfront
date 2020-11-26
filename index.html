@@ -10,7 +10,7 @@
 	
 		function sendRequest(btnClique) {
 			let request = new XMLHttpRequest();
-			request.open("GET", "http://212.47.245.69/api/rap?nb=" + document.getElementById("nombre").value + "&text=" + document.getElementById("textDeGrosDur").innerHTML);
+			request.open("GET", "https://212.47.245.69/api/rap?nb=" + document.getElementById("nombre").value + "&text=" + document.getElementById("textDeGrosDur").innerHTML);
 			request.send("user=btnClique.innerHTML");
 			console.log(btnClique.innerHTML);
 			request.onload = () => {
