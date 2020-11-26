@@ -10,10 +10,10 @@
 
         function sendRequest(btnClique) {
             fetch("http://back.pierrestella.fr/api/rap?nb=" + document.getElementById("nombre").value + "&text=" + document.getElementById("textDeGrosDur").value)
-                .then(response =>
-                    response.json().then(function(data) {
-                        document.getElementById("textDeGrosDur").value = data;
-                    })
+                .then(response => response.json())
+                .then(response => {
+                        document.getElementById("textDeGrosDur").value = response;
+                }
             );
         }
 
