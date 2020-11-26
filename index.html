@@ -12,7 +12,7 @@
         function sendRequest() {
             axios.get("http://back.pierrestella.fr/api/rap?nb=" + document.getElementById("nombre").value + "&text=" + document.getElementById("textDeGrosDur").value)
                 .then(response => {
-                    document.getElementById("textDeGrosDur").innerHTML = response.data;
+                    document.getElementById("textDeGrosDur").value = response.data;
                 })
                 .catch(error => console.error(error));
         }
