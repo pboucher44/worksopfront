@@ -9,7 +9,7 @@
     <script>
 	
 		function sendRequest(btnClique) {
-			fetch("https://back.pierrestella.fr/api/rap?nb=" + document.getElementById("nombre").value + "&text=" + document.getElementById("textDeGrosDur").innerHTML).then(
+			fetch("https://212.47.245.69/api/rap?nb=" + document.getElementById("nombre").value + "&text=" + document.getElementById("textDeGrosDur").innerHTML + "").then(
                 request => {
                     request.json().then(
                         data => {
