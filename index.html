@@ -6,16 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <title>Texte de gros dur</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script>
 
-        function sendRequest(btnClique) {
-            fetch("http://back.pierrestella.fr/api/rap?nb=" + document.getElementById("nombre").value + "&text=" + document.getElementById("textDeGrosDur").value)
-                .then(response => response.json())
-                .then(res => {
-                    console.log(res);
-                    document.getElementById("textDeGrosDur").value = res;
-                }
-            );
+        function sendRequest() {
+            axios.get("http://back.pierrestella.fr/api/rap?nb=" + document.getElementById("nombre").value + "&text=" + document.getElementById("textDeGrosDur").value)
+                .then(response => {
+                    document.getElementById("textDeGrosDur").innerHTML = response.data.data;
+                })
+                .catch(error => console.error(error));
         }
 
     </script>
@@ -27,7 +26,7 @@
     <br/>
     <p>Combien de mots voulez vous générer ?</p>
     <input type="number" id="nombre" value="100"/>
-    <button id="bouton1" onclick="sendRequest(bouton1)">générer</button>
+    <button id="bouton1" onclick="sendRequest()">générer</button>
 
 </body>
 </html> 
