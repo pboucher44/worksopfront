@@ -13,7 +13,7 @@
                 request => {
                     request.json().then(
                         data => {
-                            document.getElementById("textDeGrosDur").innerHTML += " " + data;
+                            document.getElementById("textDeGrosDur").value = data;
                         }
                     );
                 }
