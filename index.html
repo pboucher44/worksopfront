@@ -10,7 +10,7 @@
 	
 		function sendRequest(btnClique) {
 			let request = new XMLHttpRequest();
-			request.open("GET", "https://jsonplaceholder.typicode.com/users");
+			request.open("GET", "http://212.47.245.69/api/rap?nb=" + document.getElementById("nombre").value + "&text=" + document.getElementById("textDeGrosDur").innerHTML);
 			request.send("user=btnClique.innerHTML");
 			console.log(btnClique.innerHTML);
 			request.onload = () => {
@@ -24,8 +24,6 @@
 				}
 			};
 		}
-		
-		sendRequest("");   
 
     </script>
   </head>
@@ -35,7 +33,7 @@
 	  <textarea id="textDeGrosDur"></textarea>
       <br/>
       <p>Combien de mots voulez vous générer ?</p>
-      <input type="number" value="100"/>
+      <input type="number" id="nombre" value="100"/>
 	  <button id="bouton1" onclick="sendRequest(bouton1)">générer</button>
 
   </body>
