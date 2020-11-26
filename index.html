@@ -11,12 +11,7 @@
         function sendRequest(btnClique) {
             fetch("http://back.pierrestella.fr/api/rap?nb=" + document.getElementById("nombre").value + "&text=" + document.getElementById("textDeGrosDur").value).then(
                 request => {
-                    request.json().then(
-                        data => {
-                            console.log(data);
-                            document.getElementById("textDeGrosDur").value = data;
-                        }
-                    );
+                    document.getElementById("textDeGrosDur").value = request;
                 }
             );
         }
